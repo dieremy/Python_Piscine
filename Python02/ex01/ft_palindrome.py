@@ -1,5 +1,6 @@
 import sys
 
+# USELESS
 def reverse_string(string) :
     new = ""
     for c in range(len(string), 0, -1):
@@ -7,8 +8,7 @@ def reverse_string(string) :
     return (new)
 
 def is_palindrome(string) :
-    new_string = reverse_string(string)
-    return (string == new_string)
+    return (string == string[::-1])
 
 def main() :
     if (len(sys.argv) != 2) :

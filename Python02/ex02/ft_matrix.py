@@ -7,8 +7,7 @@ def fill_mtx(rows, columns) :
     while i < rows :
         j = 0
         while j < columns :
-            print("Insert the element in position (", i, ",", j, "):")
-            v = float(input())
+            v = float(input(f"Insert the element in position ({i}, {j}): "))
             mtx[i][j] = v
             j += 1
         i += 1
