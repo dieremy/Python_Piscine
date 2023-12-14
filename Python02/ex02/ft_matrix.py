@@ -15,27 +15,49 @@ def fill_mtx(rows, columns) :
     return (mtx)
 
 
-def mtx_sum(mtx, rows, columns) :
-    sums_rows = []
-    sums_colums = []
-    sum_r = 0
-    sum_c = 0
-    for i in range(rows) :
-        for j in range(columns) :
-            #print(i, j, mtx[i][j])
-            sum_r += mtx[i][j]
-        sums_rows.append(sum_r)
-        sums_colums.append(sum_c)
-        sum_r = 0
-        sum_c = 0
-    print("sum-> ", sum_r, "sumSr-> ", sums_rows)
-    print("sum-> ", sum_c, "sumSc-> ", sums_colums)
+def print_mtx(mtx, rows) :
+    print("The inserted matrix is:")
+    i = 0
+    while i < rows :
+        print(mtx[i])
+        i += 1
+
+
+def mtx_sum_rows(mtx) :
+    sum_array = []
+    sum = 0
+    for row in mtx:
+        for element in row:
+            sum += element
+        sum_array.append(sum)
+        sum = 0
+    print("The sum over rows is:")
+    print(sum_array)
+
+
+def mtx_sum_cols(mtx, rows, columns) :
+    sum_array = []
+    sum = 0
+    i = 0
+    while i < columns :
+        j = 0
+        while j < rows :
+            sum += mtx[j][i]
+            j += 1
+        sum_array.append(sum)
+        sum = 0
+        i += 1
+    print("The sum over columns is:")
+    print(sum_array)
+
 
 
 if (len(sys.argv) != 3) :
     print("Error! Usage: python3 ft_matrix.py <n> <m>")
 else :
-    mtx = fill_mtx(int(sys.argv[1]), int(sys.argv[2]))
-    print("matrix-> ", mtx)
-    mtx_sum(mtx, int(sys.argv[1]), int(sys.argv[2]))
-
+    rows = int(sys.argv[1])
+    columns = int(sys.argv[2])
+    mtx = fill_mtx(rows, columns)
+    print_mtx(mtx, rows)
+    mtx_sum_rows(mtx)
+    mtx_sum_cols(mtx, rows, columns)
