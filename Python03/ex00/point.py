@@ -1,23 +1,26 @@
 class Point :
 
-    def __init__(self, x1, x2, y1, y2) :
-        self.x1 = x1
-        self.x2 = x2
-        self.y1 = y1
-        self.y2 = y2
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-    def distance(self) :
-        return (((self.x2 - self.x1) ** 2 + (self.y2 - self.y1) ** 2) ** 0.5)
+def distance(p1: Point, p2: Point) :
+    return (((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2) ** 0.5)
 
 def main() :
+    p1_input = input("Insert the coordinates of the first point: ")
+    p2_input = input("Insert the coordinates of the second point: ")
 
-    input_x = input("Insert the coordinates of the first point: ").split()
-    input_y = input("Insert the coordinates of the second point: ").split()
-    x = input_x[0].split(",")
-    y = input_y[0].split(",")
-    #print(x, y)
-    p = Point(float(x[0]), float(x[1]), float(y[0]), float(y[1]))
-    print("Their distance is:", p.distance())
+    x, y = p1_input.split(",")
+    j, k = p2_input.split(",")
+    try :
+        p1 = Point(float(x), float(y))
+        p2 = Point(float(j), float(k))
+    except Exception as e :
+        print("Error")
+        exit(1)
+
+    print("Their distance is:", distance(p1, p2))
 
 #CHECK THIS FUNCTION CAUSE IS NOT WORKING AS EXPECTED 
 if __name__ == "__main__" :
