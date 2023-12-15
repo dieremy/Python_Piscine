@@ -22,6 +22,5 @@ def main() :
 
     print("Their distance is:", distance(p1, p2))
 
-#CHECK THIS FUNCTION CAUSE IS NOT WORKING AS EXPECTED 
 if __name__ == "__main__" :
     main()
