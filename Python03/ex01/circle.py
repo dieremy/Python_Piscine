@@ -4,16 +4,18 @@ class Point :
         self.x = x
         self.y = y
 
+    def __str__(self) :
+        return f"({self.x}, {self.y})"
+
 
 class Circle(Point) :
 
-    def __init__(self, p, radius) :
+    def __init__(self, p, radius: int) :
         self.p = p
         self.radius = radius
 
     def __str__(self) :
-        Point.__init__(self.p.x, self.p.y)
-        return "Circle of center (%s, %s) and radius %s" % (Point.x, Point.y, self.radius)
+        return f"Circle of center {self.p} and radius {self.radius}"
 
 def main() :
     lst = []
@@ -21,8 +23,6 @@ def main() :
     lst.append(100)
 
     p = Point(int(150), int(100))
-    print(type(p))
-    print(p.x, p.y)
     c = Circle(p, 75)
     print(c)
 
