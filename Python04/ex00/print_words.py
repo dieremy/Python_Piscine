@@ -2,7 +2,8 @@ def read_words(filename):
     words = []
     with open(filename, 'r') as file:
         for line in file:
-            words.append(line.strip())  # Append each word to the list
+            words.append(line)
+    file.close()
     return words
 
 char_len = int(input("Insert an integer: "))
@@ -12,7 +13,6 @@ words = read_words(file_name)
 words.sort()
 
 print("The words longer than", char_len, "are the following:")
-
 for elem in words :
     word = elem.strip("\n")
     length = len(word)
