@@ -13,5 +13,8 @@ def main() :
             return (array)
 
 if __name__ == "__main__":  
-    array = main()
-    print("The sum is:", sum_list(array))
+    try :
+        array = main()
+        print("The sum is:", sum_list(array))
+    except Exception :
+        print("Invalid data type")

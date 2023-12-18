@@ -5,6 +5,8 @@ def absolute_expression_solver(x):
     return (y)
 
 x = input("Insert an expression: ")
-r = absolute_expression_solver(x)
-
-print(r)
+try :
+    r = absolute_expression_solver(x)
+    print("The result is:", r)
+except Exception :
+    print("Invalid data type")
