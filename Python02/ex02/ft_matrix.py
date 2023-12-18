@@ -54,9 +54,12 @@ def mtx_sum_cols(mtx, rows, columns) :
 if (len(sys.argv) != 3) :
     print("Error! Usage: python3 ft_matrix.py <n> <m>")
 else :
-    rows = int(sys.argv[1])
-    columns = int(sys.argv[2])
-    mtx = fill_mtx(rows, columns)
-    print_mtx(mtx, rows)
-    mtx_sum_rows(mtx)
-    mtx_sum_cols(mtx, rows, columns)
+    try :
+        rows = int(sys.argv[1])
+        columns = int(sys.argv[2])
+        mtx = fill_mtx(rows, columns)
+        print_mtx(mtx, rows)
+        mtx_sum_rows(mtx)
+        mtx_sum_cols(mtx, rows, columns)
+    except Exception :
+        print("Invalid data type")

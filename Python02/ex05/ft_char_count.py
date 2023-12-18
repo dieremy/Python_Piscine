@@ -19,5 +19,6 @@ else :
     for key in sorted_k :
         d[key] = freq[key]
 
+    print("Char count:")
     for key, value in d.items() :
         print(key, "=", value)
