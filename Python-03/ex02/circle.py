@@ -33,11 +33,11 @@ def main() :
         try :
             p = Point(float(sys.argv[1]), float(sys.argv[2]))
             p_zero = Point(0, 0)
-            c = Circle(p, 1.0)
+            c = Circle(p, 1)
             if c.contains(p) == True :
-                print("Point", p, "lies in the Circle of center", p_zero, c.radius)
+                print("Point", p, "lies in the Circle of center", p_zero, "and radius", c.radius)
             else :
-                print("Point", p, "lies out the Circle of center", p_zero, c.radius)
+                print("Point", p, "lies out the Circle of center", p_zero, "and radius", c.radius)
         except ValueError :
             print("Error! Please provide valid numerical arguments")
 
